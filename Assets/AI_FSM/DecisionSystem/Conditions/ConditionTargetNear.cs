@@ -21,7 +21,7 @@ public class ConditionTargetNear : ICondition
 	{
 		
 		if (target == null)		return false;
-		Debug.Log("Is near");
+		Debug.Log("Is near" + this.transform.parent.transform.parent.gameObject+"  Target: "+target);
 		return (transform.position - target.transform.position).magnitude <= range;
 	}
 
