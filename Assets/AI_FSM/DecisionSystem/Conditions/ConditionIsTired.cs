@@ -22,11 +22,17 @@ public class ConditionIsTired : ICondition
     }
     public void regenEnergy()
     {
+        Debug.Log("resting :D");
         energy = energyCap;
     }
     public void getTired(float value)
     {
+        Debug.Log("getting tired D:");
         energy -= value;
+    }
+    private void Update()//for debug
+    {
+        Debug.Log(energy + " energy");
     }
 
 }

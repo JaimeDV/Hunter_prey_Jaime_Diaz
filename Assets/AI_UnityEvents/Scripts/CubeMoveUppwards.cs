@@ -17,6 +17,7 @@ public class CubeMoveUppwards : MonoBehaviour
 
     private void MoveUppwards(float amount)
     {
+        Debug.Log("im working!");
         Vector3 newpos;
         newpos.x = this.transform.position.x;
         newpos.z = this.transform.position.z;

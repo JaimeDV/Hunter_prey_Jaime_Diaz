@@ -5,9 +5,11 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class ActionRest : IAction
 {
-    /// <summary>
-    /// the game object with condition tired
-    /// </summary>
+  /// <summary>
+  /// restore energy when tired
+  /// </summary>
+
+    //the game object with condition tired
     public GameObject eventReceiver;
 
     public float timeTorest;
@@ -17,6 +19,7 @@ public class ActionRest : IAction
     {
         Act();
     }
+   
     public override void Act()
     {
         Debug.Log("resting");

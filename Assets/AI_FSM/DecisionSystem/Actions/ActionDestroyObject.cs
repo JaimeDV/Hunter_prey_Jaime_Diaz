@@ -11,6 +11,7 @@ public class ActionDestroyObject : IAction
 
 	public override void Act ()
 	{
+		Debug.Log("killing!");
 		if (objectToDestroy == null)	return;
 
 		Destroy(objectToDestroy);

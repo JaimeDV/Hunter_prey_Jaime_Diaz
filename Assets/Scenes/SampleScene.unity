@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 179991479}
   - component: {fileID: 179991478}
   m_Layer: 0
-  m_Name: IsTired(root) (1)
+  m_Name: IsTired(root)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 179991478}
   trueNode: {fileID: 1342056556}
-  falseNode: {fileID: 884580393}
+  falseNode: {fileID: 884580397}
 --- !u!1 &335052554
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +355,8 @@ GameObject:
   - component: {fileID: 408668293}
   - component: {fileID: 408668295}
   - component: {fileID: 408668294}
+  - component: {fileID: 408668297}
+  - component: {fileID: 408668296}
   m_Layer: 0
   m_Name: Move
   m_TagString: Untagged
@@ -401,6 +403,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1344c3cb1484469dbcb204042ba6c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &408668296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408668292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3f471e990744f8f8ce49d0d9050f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDestroy: {fileID: 975871194}
+--- !u!114 &408668297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408668292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b67503ea856e47ba8980c427fc8d9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 408668296}
 --- !u!1 &550995420
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,12 +688,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 884580388}
-  - component: {fileID: 884580393}
+  - component: {fileID: 884580397}
+  - component: {fileID: 884580396}
   - component: {fileID: 884580392}
   - component: {fileID: 884580391}
-  - component: {fileID: 884580390}
   - component: {fileID: 884580389}
-  - component: {fileID: 884580394}
+  - component: {fileID: 884580395}
   m_Layer: 0
   m_Name: is NearDesition
   m_TagString: Untagged
@@ -704,21 +732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1655528384}
   range: 5
---- !u!114 &884580390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884580387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb9217fa637cb43ac9fa7cd61840116a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventReceiver: {fileID: 975871194}
-  message: Sleep
-  objectParameter: {fileID: 0}
 --- !u!114 &884580391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystemToPlay: {fileID: 975871196}
-  stopInstead: 0
+  stopInstead: 1
 --- !u!114 &884580392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,8 +760,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 884580391}
-  - {fileID: 884580390}
---- !u!114 &884580393
+  - {fileID: 884580395}
+--- !u!114 &884580395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884580387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0f8cd5ba2553543a8a78c3c5b06762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReceiver: {fileID: 179991476}
+  degradeRate: 5
+--- !u!114 &884580396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884580387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b67503ea856e47ba8980c427fc8d9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 884580392}
+--- !u!114 &884580397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -763,20 +803,6 @@ MonoBehaviour:
   condition: {fileID: 884580389}
   trueNode: {fileID: 550995422}
   falseNode: {fileID: 408668295}
---- !u!114 &884580394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884580387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c9d38f99c0e489bbf672287d88c559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleSystemToPlay: {fileID: 1342056559}
-  stopInstead: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +903,7 @@ GameObject:
   - component: {fileID: 975871196}
   - component: {fileID: 975871195}
   m_Layer: 0
-  m_Name: Hunter (1)
+  m_Name: Hunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,14 +989,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975871194}
   serializedVersion: 8
-  lengthInSec: 0.45
+  lengthInSec: 0.05
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -1207,7 +1233,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.55
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1523,7 +1549,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 53
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1584,13 +1610,13 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 1.6
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.5
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 286.49066, y: 294.4645, z: 64.61583}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1727,7 +1753,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 145.4
+      value: 140
       mode: 0
       spread: 0
       speed:
@@ -1789,7 +1815,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0.8
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -15688,7 +15714,7 @@ GameObject:
   - component: {fileID: 1655528382}
   - component: {fileID: 1655528381}
   m_Layer: 0
-  m_Name: Foe
+  m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

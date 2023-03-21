@@ -11,6 +11,7 @@ public class CombinedActions : IAction
 	
 	public override void Act ()
 	{
+		Debug.Log("acting!");
 		for (int i = 0; i < actions.Length; ++i)
 		{
 			actions[i].Act();
@@ -19,6 +20,7 @@ public class CombinedActions : IAction
 
 	public override void InitializeAction ()
 	{
+		Debug.Log("acting!");
 		for (int i = 0; i < actions.Length; ++i)
 		{
 			actions[i].InitializeAction();
@@ -28,6 +30,7 @@ public class CombinedActions : IAction
 	
 	public override void FinalizeAction ()
 	{
+		Debug.Log("acting!");
 		for (int i = 0; i < actions.Length; ++i)
 		{
 			actions[i].FinalizeAction();

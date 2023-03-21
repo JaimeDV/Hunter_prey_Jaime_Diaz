@@ -24,11 +24,13 @@ public class BinaryDecisionTreeNode : DecisionTreeNode
 		{
 			if (trueNode != null)
 			{
+				Debug.Log(trueNode + " is true");
 				return trueNode.Decide();
 			}
 		}
 		else if (falseNode != null)
 		{
+			Debug.Log(falseNode + " is false");
 			return falseNode.Decide();
 		}
 		
