@@ -14,10 +14,8 @@ public class ConditionIsTired : ICondition
     {
         if (energy <= 0)
         {
-            Debug.Log("tired D:");
             return true;
         }
-        Debug.Log("Energy :D");
         return false;
     }
     public void regenEnergy()
@@ -30,9 +28,9 @@ public class ConditionIsTired : ICondition
         Debug.Log("getting tired D:");
         energy -= value;
     }
-    private void Update()//for debug
-    {
-        Debug.Log(energy + " energy");
-    }
+    //private void Update()//for debug
+    //{
+    //    Debug.Log(energy + " energy");
+    //}
 
 }

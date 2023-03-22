@@ -22,12 +22,12 @@ public class ActionRest : IAction
    
     public override void Act()
     {
-        Debug.Log("resting");
-        regenEnergy();
+        StartCoroutine(nameof(regenEnergy));
     }
    
     private IEnumerator regenEnergy()
     {
+        Debug.Log("resting");
         yield return new WaitForSeconds(timeTorest);
         eventReceiver.GetComponent<ConditionIsTired>().regenEnergy();
     }

@@ -16,7 +16,6 @@ public class ActionWasteEnergy : IAction
 
     public override void Act()
     {
-        Debug.Log("degrading");
         eventReceiver.GetComponent<ConditionIsTired>().getTired(Time.deltaTime * degradeRate);
     }
     

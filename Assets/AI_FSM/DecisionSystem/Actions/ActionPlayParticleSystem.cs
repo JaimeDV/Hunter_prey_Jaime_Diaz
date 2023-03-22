@@ -17,7 +17,10 @@ public class ActionPlayParticleSystem : IAction
 		}
 		else
 		{
-			particleSystemToPlay.Play();
+			if (!particleSystemToPlay.isPlaying)
+			{
+				particleSystemToPlay.Play();
+			}
 		}
 	}
 	
