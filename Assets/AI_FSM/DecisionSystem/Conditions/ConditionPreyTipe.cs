@@ -6,15 +6,17 @@ using static UnityEngine.GraphicsBuffer;
 public class ConditionPreyTipe : ICondition
 {
     /// <summary>
+    /// Cut
     /// checks the type of animal that is nearby
     /// </summary>
     public string preyTag;
     //the one with condition targetnear
-    public GameObject eventReceiver;
-    private GameObject target;
+    //public GameObject eventReceiver;
+    public GameObject target;
     public override bool Test()
     {
-        target=eventReceiver.GetComponent<ConditionTargetNear>().GetTarget();
+        //target=eventReceiver.GetComponent<ConditionTargetNear>().GetTarget();
+        
 
         if (target == null)		return false;
 

@@ -23,19 +23,19 @@ public class ConditionTargetNear : ICondition
 	public override bool Test ()
 	{
 
-		//if (target == null)		return false;
+		if (target == null) return false;
 
-		//return (transform.position - target.transform.position).magnitude <= range;
+		return (transform.position - target.transform.position).magnitude <= range;
 
-		foreach(Transform t in targets)
-		{
-			if((transform.position - t.transform.position).magnitude <= range){
-                Debug.Log("found one!");
-				nearTarget = t.transform.parent.gameObject;
-                return true;
-			}
-		}
-		return false;
+		//foreach(Transform t in targets)
+		//{
+		//	if((transform.position - t.transform.position).magnitude <= range){
+		//              Debug.Log("found one!");
+		//		nearTarget = t.transform.gameObject;
+		//              return true;
+		//	}
+		//}
+		//return false;
 	}
 	public GameObject GetTarget()
 	{
