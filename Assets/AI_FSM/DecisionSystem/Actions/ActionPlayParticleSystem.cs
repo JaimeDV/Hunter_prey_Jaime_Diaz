@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering.VirtualTexturing;
 
 /// <summary>
 /// Starts playing/stops a particle system.
@@ -13,8 +14,10 @@ public class ActionPlayParticleSystem : IAction
 	{
 		if (stopInstead)
 		{
-			particleSystemToPlay.Stop();
-		}
+			//particleSystemToPlay.Stop();
+			
+            particleSystemToPlay.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
 		else
 		{
 			if (!particleSystemToPlay.isPlaying)
