@@ -27,7 +27,7 @@ public class ActionRest : IAction
    
     private IEnumerator regenEnergy()
     {
-        Debug.Log("resting");
+        Debug.Log("resting "+ this.gameObject.transform.parent.gameObject.transform.parent.gameObject);
         yield return new WaitForSeconds(timeTorest);
         eventReceiver.GetComponent<ConditionIsTired>().regenEnergy();
     }

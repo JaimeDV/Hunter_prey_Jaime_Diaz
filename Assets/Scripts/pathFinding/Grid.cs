@@ -104,40 +104,40 @@ public class Grid : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
-    {
+    //private void OnDrawGizmos()
+    //{
 
-        Gizmos.DrawWireCube(transform.position, new Vector3(worldSize.x, 1, worldSize.y));
+    //    Gizmos.DrawWireCube(transform.position, new Vector3(worldSize.x, 1, worldSize.y));
 
-        if (nodeArray != null)
-        {
-            foreach (Node n in nodeArray)
-            {
-                if (n.isNotWall)
-                {
-                    Gizmos.color = Color.white;
-                }
-                if (!n.isNotWater)
-                {
-                    Gizmos.color = Color.blue;
-                }
-                if(!n.isNotWall)
-                {
-                    Gizmos.color = Color.yellow;
-                }
+    //    if (nodeArray != null)
+    //    {
+    //        foreach (Node n in nodeArray)
+    //        {
+    //            if (n.isNotWall)
+    //            {
+    //                Gizmos.color = Color.white;
+    //            }
+    //            if (!n.isNotWater)
+    //            {
+    //                Gizmos.color = Color.blue;
+    //            }
+    //            if(!n.isNotWall)
+    //            {
+    //                Gizmos.color = Color.yellow;
+    //            }
 
 
-                if (FinalPath != null)
-                {
-                    if (FinalPath.Contains(n))
-                    {
-                        Gizmos.color = Color.red;
-                    }
+    //            if (FinalPath != null)
+    //            {
+    //                if (FinalPath.Contains(n))
+    //                {
+    //                    Gizmos.color = Color.red;
+    //                }
 
-                }
+    //            }
 
-                Gizmos.DrawCube(n.position, Vector3.one * (nodeDiameter - distanceBetweenNodes));
-            }
-        }
-    }
+    //            Gizmos.DrawCube(n.position, Vector3.one * (nodeDiameter - distanceBetweenNodes));
+    //        }
+    //    }
+    //}
 }

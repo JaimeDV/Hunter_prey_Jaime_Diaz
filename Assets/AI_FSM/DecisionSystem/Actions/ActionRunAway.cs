@@ -1,31 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class ActionChase : IAction
+public class ActionRunAway : IAction
 {
-    /// <summary>
-    /// chase an target, unlike the wander funtion it doesn't use A* due to time constrains
-    /// </summary>
+    [SerializeField]
+    private GameObject target;
+    private float timer;
   
+    [SerializeField]
+    private GameObject endpoint;
 
-    //[SerializeField]
-    //private GameObject test;
 
     [SerializeField]
-    private Grid grid;
+    private GameObject runner;
 
-    [SerializeField]
-    private GameObject prey;
-
-    [SerializeField]
-    private GameObject self;
-
-    [SerializeField]
-    private GameObject chaser;
-
-    
     [SerializeField]
     private float speed;
 
@@ -34,19 +23,31 @@ public class ActionChase : IAction
 
     private Vector3 targetPosition;
     private Vector3 velocity;
+    [SerializeField]
+    private S_ModePlayer moveScript;
     public override void Act()
     {
-        ChaseTarget(prey.transform.position);
+        if(moveScript != null)
+        {
+            moveScript.enabled = true;
+        }
+
+        AvoidTarget(target);
     }
-    private void ChaseTarget(Vector3 target)
+    private void AvoidTarget(GameObject target)
     {
+        Debug.LogError("running!");
+
         if (target != null)
         {
-            Debug.LogError("chasing!");
 
-            if (chaser.transform.position != target)
+
+            timer += Time.deltaTime * speed;
+            targetPosition = target.transform.position;
+
+            if (runner.transform.position != targetPosition)
             {
-                Vector3 distance = (target - chaser.transform.position);
+                Vector3 distance = (targetPosition - runner.transform.position);
 
                 Vector3 desiredVelocity = (distance.normalized * speed);
                 Vector3 steering = desiredVelocity - velocity;
@@ -56,10 +57,10 @@ public class ActionChase : IAction
                 float slowdownFactor = Mathf.Clamp01(distance.magnitude / slowDownDistance);
                 velocity *= slowdownFactor;
                 velocity.y = 0;//i don't know why it adds to the y axis
-                chaser.transform.position += velocity * Time.deltaTime;
+
+                endpoint.transform.position -= velocity * Time.deltaTime;
 
             }
-
         }
     }
 }

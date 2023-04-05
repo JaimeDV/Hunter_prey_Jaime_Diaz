@@ -11,7 +11,6 @@ public class CombinedActions : IAction
 	
 	public override void Act ()
 	{
-		Debug.Log("acting!");
 		for (int i = 0; i < actions.Length; ++i)
 		{
 			actions[i].Act();
