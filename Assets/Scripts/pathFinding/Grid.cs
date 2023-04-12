@@ -121,7 +121,7 @@ public class Grid : MonoBehaviour
     //            {
     //                Gizmos.color = Color.blue;
     //            }
-    //            if(!n.isNotWall)
+    //            if (!n.isNotWall)
     //            {
     //                Gizmos.color = Color.yellow;
     //            }

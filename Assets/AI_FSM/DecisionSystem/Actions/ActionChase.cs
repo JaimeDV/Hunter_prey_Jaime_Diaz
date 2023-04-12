@@ -42,7 +42,7 @@ public class ActionChase : IAction
     {
         if (target != null)
         {
-            Debug.LogError("chasing!");
+            //Debug.LogError("chasing!");
 
             if (chaser.transform.position != target)
             {

@@ -36,7 +36,7 @@ public class ActionRunAway : IAction
     }
     private void AvoidTarget(GameObject target)
     {
-        Debug.LogError("running!");
+       
 
         if (target != null)
         {
